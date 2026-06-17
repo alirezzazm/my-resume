@@ -1,0 +1,156 @@
+// Portfolio database schema
+// SQLite by default — برای Postgres فقط datasource را عوض کنید.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ───────────────────────────────────────
+//  USER (admin)
+// ───────────────────────────────────────
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String   // bcrypt hash
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ───────────────────────────────────────
+//  SETTINGS — اطلاعات شخصی (یک ردیف)
+// ───────────────────────────────────────
+model Settings {
+  id              Int      @id @default(1)
+  nameFa          String   @default("علیرضا زمانی")
+  nameEn          String   @default("Alireza Zamani")
+  titleFa         String   @default("توسعه‌دهنده ارشد .NET و فول‌استک")
+  titleEn         String   @default("Senior .NET & Full-Stack Developer")
+  email           String   @default("alireza.zamani7745@gmail.com")
+  phone           String   @default("+98 936 255 3085")
+  locationFa      String   @default("تهران، ایران")
+  locationEn      String   @default("Tehran, Iran")
+  bioFa           String   @default("")
+  bioEn           String   @default("")
+  avatar          String   @default("/avatar.jpg")
+  resumeUrl       String   @default("/cv.pdf")
+  github          String?
+  linkedin        String?
+  twitter         String?
+  telegram        String?
+  instagram       String?
+  statsYears      Int      @default(8)
+  statsProjects   Int      @default(22)
+  statsClients    Int      @default(15)
+  statsCoffee     Int      @default(999)
+  updatedAt       DateTime @updatedAt
+}
+
+// ───────────────────────────────────────
+//  PROJECTS
+// ───────────────────────────────────────
+model Project {
+  id              String   @id
+  titleFa         String
+  titleEn         String
+  descriptionFa   String
+  descriptionEn   String
+  longDescFa      String?  // پاراگراف‌ها با \n\n جدا شوند
+  longDescEn      String?
+  featuresFa      String?  // یک ویژگی در هر خط
+  featuresEn      String?
+  challengesFa    String?
+  challengesEn    String?
+  image           String   @default("")
+  gallery         String   @default("")  // عکس‌های اضافه با \n جدا شده
+  technologies    String   @default("")  // با , جدا شده
+  category        String   // web | mobile | desktop | enterprise
+  liveUrl         String?
+  codeUrl         String?
+  appStore        String?
+  playStore       String?
+  featured        Boolean  @default(false)
+  date            String?
+  roleFa          String?
+  roleEn          String?
+  durationFa      String?
+  durationEn      String?
+  clientFa        String?
+  clientEn        String?
+  order           Int      @default(0)
+  published       Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ───────────────────────────────────────
+//  SKILLS
+// ───────────────────────────────────────
+model Skill {
+  id        Int      @id @default(autoincrement())
+  name      String
+  level     Int      @default(50)        // 0-100
+  category  String   // backend | frontend | mobile | database | devops | tools
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ───────────────────────────────────────
+//  EXPERIENCES
+// ───────────────────────────────────────
+model Experience {
+  id            String   @id @default(cuid())
+  type          String   // work | education
+  titleFa       String
+  titleEn       String
+  companyFa     String
+  companyEn     String
+  startDate     String   // YYYY-MM
+  endDate       String?  // null = present
+  descriptionFa String
+  descriptionEn String
+  technologies  String   @default("")  // CSV
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// ───────────────────────────────────────
+//  BLOG POSTS
+// ───────────────────────────────────────
+model BlogPost {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  titleFa   String
+  titleEn   String
+  excerptFa String
+  excerptEn String
+  contentFa String?  // markdown
+  contentEn String?
+  cover     String   @default("")
+  tags      String   @default("")   // CSV
+  readTime  Int      @default(5)
+  date      String   // YYYY-MM-DD
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ───────────────────────────────────────
+//  CONTACT MESSAGES (پیام‌های فرم تماس)
+// ───────────────────────────────────────
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

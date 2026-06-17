@@ -1,0 +1,18 @@
+'use client';
+
+import Link from 'next/link';
+import { ArrowLeft, FolderX } from 'lucide-react';
+
+export default function NotFound() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 dark:bg-[#0d1117]">
+      <FolderX size={80} className="text-brand-500 mb-6" strokeWidth={1.2} />
+      <h1 className="text-3xl font-bold mb-2">Project not found</h1>
+      <p className="text-slate-500 dark:text-slate-400 mb-6 font-mono">// 404 — this id does not exist</p>
+      <Link href="/#projects" className="btn-primary">
+        <ArrowLeft size={16} />
+        Back to all projects
+      </Link>
+    </div>
+  );
+}

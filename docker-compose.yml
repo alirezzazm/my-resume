@@ -1,0 +1,38 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portfolio_web
+    restart: unless-stopped
+    expose:
+      - "3000"
+    env_file:
+      - .env
+    networks:
+      - portfolio_net
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  nginx:
+    image: nginx:alpine
+    container_name: portfolio_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+      - ./nginx/logs:/var/log/nginx
+    depends_on:
+      - web
+    networks:
+      - portfolio_net
+
+networks:
+  portfolio_net:
+    driver: bridge

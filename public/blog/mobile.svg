@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#ec4899"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <text x="600" y="280" text-anchor="middle" font-size="160" fill="white" opacity="0.9">📱</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Inter, sans-serif" font-size="56" font-weight="800" fill="white">MAUI vs React Native</text>
+</svg>

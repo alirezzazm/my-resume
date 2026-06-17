@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="fj1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#fj1)"/>
+  <g transform="translate(80 60)">
+    <rect width="440" height="280" rx="12" fill="#0f172a" stroke="white" stroke-width="2"/>
+    <rect x="0" y="0" width="440" height="40" fill="#10b981"/>
+    <text x="20" y="26" font-family="sans-serif" font-size="16" font-weight="800" fill="white">FindJob</text>
+    <rect x="50" y="70" width="160" height="80" rx="8" fill="#1e293b"/>
+    <rect x="50" y="160" width="160" height="80" rx="8" fill="#1e293b"/>
+    <rect x="230" y="70" width="160" height="80" rx="8" fill="#1e293b"/>
+    <rect x="230" y="160" width="160" height="80" rx="8" fill="#1e293b"/>
+    <text x="60" y="92" font-family="sans-serif" font-size="11" font-weight="700" fill="#10b981">Senior .NET Dev</text>
+    <text x="60" y="110" font-family="sans-serif" font-size="9" fill="#94a3b8">Full-time · Remote</text>
+    <text x="60" y="125" font-family="sans-serif" font-size="9" fill="#64748b">$80k - $120k</text>
+    <text x="60" y="140" font-family="sans-serif" font-size="9" fill="#10b981">Apply →</text>
+    <text x="240" y="92" font-family="sans-serif" font-size="11" font-weight="700" fill="#10b981">React Developer</text>
+    <text x="240" y="110" font-family="sans-serif" font-size="9" fill="#94a3b8">Hybrid</text>
+    <text x="60" y="182" font-family="sans-serif" font-size="11" font-weight="700" fill="#10b981">DevOps Engineer</text>
+    <text x="240" y="182" font-family="sans-serif" font-size="11" font-weight="700" fill="#10b981">Mobile Dev</text>
+  </g>
+  <text x="300" y="370" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="white">FindJob · Job Marketplace</text>
+</svg>
