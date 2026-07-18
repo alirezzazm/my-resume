@@ -14,8 +14,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Prisma / SQLite
-data/
-prisma/data/
-*.db
+# Prisma / SQLite (portfolio.db is tracked intentionally so `git clone` reproduces the live data)
 *.db-journal

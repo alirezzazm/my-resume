@@ -150,7 +150,7 @@ export default function ProjectForm({
         <div className="md:col-span-2">
           <GalleryUploader
             value={form.gallery || ''}
-            onChange={(v) => update('gallery', v)}
+            onChange={(v: any) => update('gallery', v)}
           />
         </div>
 

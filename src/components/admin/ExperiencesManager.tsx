@@ -70,7 +70,7 @@ export default function ExperiencesManager({ initial }: { initial: any[] }) {
           <ExpRow
             key={it.id} item={it}
             loading={loadingId === it.id}
-            onUpdate={(d) => onUpdate(it.id, d)}
+            onUpdate={(d: any) => onUpdate(it.id, d)}
             onDelete={() => onDelete(it.id)}
           />
         ))}

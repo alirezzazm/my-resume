@@ -95,7 +95,7 @@ export default function SkillsManager({ initialSkills }: { initialSkills: any[] 
                 <SkillRow
                   key={s.id} skill={s}
                   loading={loading === s.id}
-                  onUpdate={(data) => updateSkill(s.id, data)}
+                  onUpdate={(data: any) => updateSkill(s.id, data)}
                   onDelete={() => deleteSkill(s.id)}
                 />
               ))}
