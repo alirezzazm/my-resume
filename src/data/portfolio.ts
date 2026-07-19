@@ -1,39 +1,326 @@
 import type { Project, Skill, ExperienceItem, BlogPostType } from '@/lib/dataHelpers';
 
-// این فایل به‌عنوان placeholder ساخته شده چون src/data قبلا در .gitignore بود و هرگز commit نشده بود.
-// اطلاعات واقعی رو از طریق پنل /admin وارد کن (اولویت با داده‌های دیتابیس است).
+// این فایل به‌عنوان fallback استاتیک استفاده می‌شود (اولویت با داده‌های دیتابیس است).
+// منبع: رزومه‌ی ای-استخدام علیرضا زمانی.
 
 export const personalInfo = {
-  name: { fa: 'نام و نام خانوادگی', en: 'Your Name' },
-  title: { fa: 'توسعه‌دهنده نرم‌افزار', en: 'Software Developer' },
+  name: { fa: 'علیرضا زمانی', en: 'Alireza Zamani' },
+  title: { fa: 'توسعه‌دهنده .NET', en: '.NET Developer' },
   email: 'alireza.zamani7745@gmail.com',
-  phone: '',
-  location: { fa: 'ایران', en: 'Iran' },
+  phone: '09362553085',
+  location: { fa: 'تهران، ایران', en: 'Tehran, Iran' },
   bio: {
-    fa: 'این متن نمونه است. لطفاً از پنل ادمین ویرایش کنید.',
-    en: 'This is placeholder text. Please edit it from the admin panel.',
+    fa: 'توسعه‌دهنده .NET با حدود ۱۰ سال سابقه در طراحی و پیاده‌سازی وب‌اپلیکیشن‌ها، سرویس‌های میکروسرویس و اپلیکیشن‌های موبایل. تجربه‌ی کار روی پروژه‌های ASP.NET Core، Blazor، Xamarin/MAUI و React Native را دارم و علاقه‌مند به معماری تمیز (Clean Code) و اصول SOLID هستم.',
+    en: '.NET developer with around 10 years of experience building web applications, microservices and mobile apps. Hands-on with ASP.NET Core, Blazor, Xamarin/MAUI and React Native, with a strong focus on clean code and SOLID principles.',
   },
-  avatar: '/avatar.jpg',
+  avatar: 'https://avatars.githubusercontent.com/u/51925660?v=4',
   resumeUrl: '/cv.pdf',
   socials: {
-    github: '',
+    github: 'https://github.com/alirezzazm',
     linkedin: '',
     twitter: '',
     telegram: '',
     instagram: '',
   },
   stats: {
-    years: 0,
-    projects: 0,
-    clients: 0,
-    coffee: 0,
+    years: 10,
+    projects: 20,
+    clients: 8,
+    coffee: 500,
   },
 };
 
-export const skills: Skill[] = [];
+export const skills: Skill[] = [
+  // Backend
+  { name: 'ASP.NET Core', level: 100, category: 'backend' },
+  { name: 'ASP.NET MVC', level: 100, category: 'backend' },
+  { name: 'ASP.NET', level: 100, category: 'backend' },
+  { name: 'ASP.NET Web API', level: 75, category: 'backend' },
+  { name: 'Microservices', level: 100, category: 'backend' },
+  { name: 'C#', level: 75, category: 'backend' },
+  { name: 'CQRS', level: 75, category: 'backend' },
+  { name: 'REST API', level: 75, category: 'backend' },
+  { name: 'LINQ', level: 75, category: 'backend' },
+  { name: 'Dependency Injection', level: 75, category: 'backend' },
+  { name: 'AutoMapper', level: 75, category: 'backend' },
+  { name: 'Razor Page', level: 75, category: 'backend' },
+  { name: 'Python', level: 50, category: 'backend' },
+  { name: 'Socket Programming', level: 25, category: 'backend' },
+  // Frontend
+  { name: 'Next.js', level: 75, category: 'frontend' },
+  { name: 'Blazor', level: 75, category: 'frontend' },
+  { name: 'React.js', level: 25, category: 'frontend' },
+  { name: 'ASP.NET AJAX', level: 75, category: 'frontend' },
+  { name: 'JavaScript', level: 50, category: 'frontend' },
+  { name: 'jQuery', level: 50, category: 'frontend' },
+  { name: 'HTML', level: 50, category: 'frontend' },
+  { name: 'CSS', level: 50, category: 'frontend' },
+  { name: 'Bootstrap', level: 50, category: 'frontend' },
+  // Mobile
+  { name: '.NET MAUI', level: 75, category: 'mobile' },
+  { name: 'Xamarin', level: 75, category: 'mobile' },
+  { name: 'React Native', level: 75, category: 'mobile' },
+  { name: 'Android SDK', level: 75, category: 'mobile' },
+  { name: 'Android Studio', level: 50, category: 'mobile' },
+  { name: 'MVVM', level: 75, category: 'mobile' },
+  // Database
+  { name: 'Microsoft SQL Server', level: 75, category: 'database' },
+  { name: 'PostgreSQL', level: 25, category: 'database' },
+  { name: 'MongoDB', level: 25, category: 'database' },
+  { name: 'Redis', level: 25, category: 'database' },
+  { name: 'Access', level: 25, category: 'database' },
+  // DevOps
+  { name: 'Docker', level: 25, category: 'devops' },
+  { name: 'Linux', level: 25, category: 'devops' },
+  { name: 'Networking', level: 75, category: 'devops' },
+  // Tools
+  { name: 'Visual Studio', level: 100, category: 'tools' },
+  { name: 'Git', level: 75, category: 'tools' },
+  { name: 'SOLID Principles', level: 75, category: 'tools' },
+  { name: 'Clean Code', level: 75, category: 'tools' },
+  { name: 'DevExpress', level: 75, category: 'tools' },
+  { name: 'Windows Forms', level: 100, category: 'tools' },
+  { name: 'Microsoft Office', level: 75, category: 'tools' },
+  { name: 'Adobe Photoshop', level: 50, category: 'tools' },
+  { name: 'Adobe XD', level: 50, category: 'tools' },
+];
 
-export const experiences: ExperienceItem[] = [];
+export const experiences: ExperienceItem[] = [
+  {
+    id: 'exp-vitaping',
+    type: 'work',
+    title: { fa: 'برنامه‌نویس', en: 'Software Developer' },
+    company: { fa: 'Vitaping', en: 'Vitaping' },
+    startDate: '2025-10',
+    endDate: '2026-01',
+    description: {
+      fa: 'همکاری پروژه‌ای؛ توسعه‌ی سایت و اپلیکیشن موبایل (React Native) برای Vitaping.ae.',
+      en: 'Project-based collaboration; built the website and a React Native mobile app for Vitaping.ae.',
+    },
+    technologies: ['Next.js', 'React Native', 'ASP.NET Core'],
+  },
+  {
+    id: 'exp-teemar',
+    type: 'work',
+    title: { fa: 'برنامه‌نویس ارشد', en: 'Senior Software Developer' },
+    company: { fa: 'تیمار', en: 'Teemar' },
+    startDate: '2024-01',
+    endDate: null,
+    description: {
+      fa: 'پیاده‌سازی پروژه‌ها به‌صورت میکروسرویس و مدیریت چند سرویس هم‌زمان.',
+      en: 'Implementing projects as microservices and managing multiple services in parallel.',
+    },
+    technologies: ['ASP.NET Core', 'Microservices', 'Docker', 'Redis'],
+  },
+  {
+    id: 'exp-dotnek',
+    type: 'work',
+    title: { fa: 'برنامه‌نویس', en: 'Software Developer' },
+    company: { fa: 'شرکت دات‌نک (dotnek.com)', en: 'Dotnek (dotnek.com)' },
+    startDate: '2023-08',
+    endDate: '2024-08',
+    description: {
+      fa: 'توسعه‌ی نرم‌افزار در شرکت دات‌نک.',
+      en: 'Software development at Dotnek.',
+    },
+    technologies: ['ASP.NET Core', 'C#'],
+  },
+  {
+    id: 'exp-shayangold',
+    type: 'work',
+    title: { fa: 'ناظر پروژه', en: 'Project Supervisor' },
+    company: { fa: 'شایان گلد', en: 'Shayan Gold' },
+    startDate: '2023-01',
+    endDate: '2024-01',
+    description: {
+      fa: 'بررسی پروژه و تعیین هدف و مسیر توسعه برای پروژه.',
+      en: 'Reviewing the project and defining goals and the development roadmap.',
+    },
+    technologies: [],
+  },
+  {
+    id: 'exp-baharan',
+    type: 'work',
+    title: { fa: 'برنامه‌نویس', en: 'Software Developer' },
+    company: { fa: 'شرکت بهاران', en: 'Baharan Company' },
+    startDate: '2020-10',
+    endDate: '2021-11',
+    description: {
+      fa: 'توسعه‌ی پروژه‌ی «شاعا».',
+      en: 'Development of the "Shaa" project.',
+    },
+    technologies: ['ASP.NET MVC', 'C#'],
+  },
+  {
+    id: 'exp-hatef',
+    type: 'work',
+    title: { fa: 'برنامه‌نویس', en: 'Software Developer' },
+    company: { fa: 'هاتف', en: 'Hatef' },
+    startDate: '2016-05',
+    endDate: '2017-05',
+    description: {
+      fa: 'شروع فعالیت حرفه‌ای برنامه‌نویسی.',
+      en: 'Start of professional software development career.',
+    },
+    technologies: ['C#', 'ASP.NET'],
+  },
+  {
+    id: 'edu-university',
+    type: 'education',
+    title: { fa: 'کارشناسی کامپیوتر', en: 'B.Sc. in Computer Science' },
+    company: { fa: 'تهران', en: 'Tehran' },
+    startDate: '2017-06',
+    endDate: null,
+    description: {
+      fa: 'معدل ۱۲',
+      en: 'GPA 12/20',
+    },
+    technologies: [],
+  },
+  {
+    id: 'edu-diploma',
+    type: 'education',
+    title: { fa: 'دیپلم ریاضی و فیزیک', en: 'High School Diploma, Math & Physics' },
+    company: { fa: '', en: '' },
+    startDate: '2013-06',
+    endDate: '2017-06',
+    description: {
+      fa: 'معدل ۱۹',
+      en: 'GPA 19/20',
+    },
+    technologies: [],
+  },
+];
 
-export const projects: Project[] = [];
+export const projects: Project[] = [
+  {
+    id: 'vitaping',
+    title: { fa: 'Vitaping', en: 'Vitaping' },
+    description: {
+      fa: 'وب‌سایت و اپلیکیشن موبایل Vitaping، توسعه داده‌شده با Next.js و React Native.',
+      en: 'Website and mobile app for Vitaping, built with Next.js and React Native.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['Next.js', 'React Native', 'ASP.NET Core'],
+    category: 'web',
+    liveUrl: 'https://vitaping.ae',
+    featured: true,
+    date: '2025-10',
+  },
+  {
+    id: 'motor-trader',
+    title: { fa: 'موتور تریدر', en: 'Motor Trader' },
+    description: {
+      fa: 'وب‌سایت و اپلیکیشن موتور تریدر برای خرید و فروش موتورسیکلت.',
+      en: 'Website and app for buying and selling motorcycles.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['Next.js', 'React Native'],
+    category: 'web',
+    liveUrl: 'https://motortrader.ae',
+    featured: true,
+    date: '2025-01',
+  },
+  {
+    id: 'online-store-microservices',
+    title: { fa: 'سامانه فروش آنلاین با میکروسرویس', en: 'Online Store on Microservices' },
+    description: {
+      fa: 'پیاده‌سازی یک سامانه‌ی فروش آنلاین کامل با معماری میکروسرویس.',
+      en: 'A complete online store implemented with a microservices architecture.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['ASP.NET Core', 'Microservices', 'Docker', 'Redis'],
+    category: 'enterprise',
+    featured: true,
+  },
+  {
+    id: 'trustcode',
+    title: { fa: 'TrustCode', en: 'TrustCode' },
+    description: {
+      fa: 'سایت معرفی و آموزش برنامه‌نویسی.',
+      en: 'A site for programming courses and educational content.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['ASP.NET Core'],
+    category: 'web',
+    liveUrl: 'https://trustcode.ir',
+    date: '2023-03',
+  },
+  {
+    id: 'nasirpdr',
+    title: { fa: 'nasirpdr.ir', en: 'nasirpdr.ir' },
+    description: {
+      fa: 'سایت فروش و تبلیغات.',
+      en: 'A sales and advertising website.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['ASP.NET Core'],
+    category: 'web',
+    liveUrl: 'https://nasirpdr.ir',
+    date: '2023-03',
+  },
+  {
+    id: 'findjob',
+    title: { fa: 'FindJob', en: 'FindJob' },
+    description: {
+      fa: 'وب‌سایتی مشابه ای-استخدام برای یک شرکت خارج از کشور.',
+      en: 'A job-listing website similar to e-Estekhdam, built for an overseas company.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['ASP.NET Core'],
+    category: 'web',
+    liveUrl: 'https://findjob.com',
+    date: '2023-12',
+  },
+  {
+    id: 'hamdoreh',
+    title: { fa: 'هم‌دوره', en: 'Hamdoreh' },
+    description: {
+      fa: 'پروژه‌ی آموزشی هم‌دوره.',
+      en: 'The Hamdoreh educational project.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['ASP.NET Core'],
+    category: 'web',
+    liveUrl: 'https://hamdoreh.ir',
+    date: '2024-01',
+  },
+  {
+    id: 'office-automation',
+    title: { fa: 'اتوماسیون اداری', en: 'Office Automation' },
+    description: {
+      fa: 'وب‌اپلیکیشن اتوماسیون اداری برای شبکه‌ی داخلی یک شرکت.',
+      en: 'An office-automation web application for an internal company network.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['ASP.NET MVC', 'C#'],
+    category: 'enterprise',
+    date: '2021-10',
+  },
+  {
+    id: 'rfid-connector',
+    title: { fa: 'برنامه اتصال به RFID', en: 'RFID Connector App' },
+    description: {
+      fa: 'برنامه‌ای برای اتصال و کار با دستگاه‌های RFID، نوشته‌شده برای دانشگاه امام حسین(ع) با پایتون.',
+      en: 'An RFID device-integration application built for Imam Hossein University with Python.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['Python'],
+    category: 'desktop',
+    date: '2021-08',
+  },
+  {
+    id: 'agility-test',
+    title: { fa: 'AgilityTest', en: 'AgilityTest' },
+    description: {
+      fa: 'پروژه‌ی تست ورزشی همراه با انواع تست‌های ورزشی و اتصال آنلاین به Device.',
+      en: 'A sports-testing project supporting various fitness tests with online device connectivity.',
+    },
+    image: '/myimage.jpg',
+    technologies: ['C#', 'ASP.NET'],
+    category: 'mobile',
+    date: '2020-05',
+  },
+];
 
 export const blogPosts: BlogPostType[] = [];
